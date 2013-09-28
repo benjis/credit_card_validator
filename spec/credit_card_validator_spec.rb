@@ -21,8 +21,8 @@ describe CreditCardValidator do
   end
   
   it "should print the correct output" do
-    expect(CreditCardValidator.new("4012888888881881").line_output).to eq("VISA: 4012888888881881 (valid)")
-    expect(CreditCardValidator.new("9111111111111111").line_output).to eq("Unknown: 9111111111111111 (invalid)")
+    expect(CreditCardValidator.new("4012888888881881").line_output).to match(/VISA: 4012888888881881\s+\(valid\)/)
+    expect(CreditCardValidator.new("9111111111111111").line_output).to match(/Unknown: 9111111111111111\s+\(invalid\)/)
   end
   
 end

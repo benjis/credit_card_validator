@@ -27,7 +27,7 @@ class CreditCardValidator < Luhn
   end
   
   def line_output
-    ["#{type}:", card, "#{valid? ? '(valid)' : '(invalid)'}"].join(' ')
+    ["#{type}:", card].join(' ').ljust(30) + "#{valid? ? '(valid)' : '(invalid)'}"
   end
   
 end
